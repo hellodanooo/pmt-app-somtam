@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import AddFighterScreen from './assets/screens/addFighterScreen.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Minh</Text>
+      <AddFighterScreen/>
+      <Text>sisi</Text>
       <StatusBar style="auto" />
     </View>
   );

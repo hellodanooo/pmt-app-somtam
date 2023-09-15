@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, TextInput, ScrollView, ActivityIndicator, View } from 'react-native';
 import firebase from '../database/firebaseDb';
-class AddUserScreen extends Component {
+class AddFighterScreen extends Component {
   constructor() {
     super();
-    this.dbRef = firebase.firestore().collection('Fighters');
+    this.dbRef = firebase.firestore().collection('users');
     this.state = {
       name: '',
       email: '',
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 })
-export default AddUserScreen;
+export default AddFighterScreen;
