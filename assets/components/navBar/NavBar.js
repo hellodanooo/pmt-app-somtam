@@ -5,8 +5,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Font from '../../graphics/Fonts';
 import { NAV_BAR } from '../../graphics/Colors';
 import AddFighter from '../../screens/AddFighter';
-import Event from '../../screens/Event';
+import EventList from '../../screens/EventList';
 import Profile from '../../screens/Profile';
+import CreateAccount from '../../screens/CreateAccount';
 
 const NavBar = () => {
 
@@ -26,8 +27,8 @@ const NavBar = () => {
       }}>
         
         <Tab.Screen 
-        name="Event" 
-        component={Event} 
+        name="Events" 
+        component={EventList} 
         color = 'white'
         options={{ 
           tabBarIcon: () => (
@@ -40,7 +41,7 @@ const NavBar = () => {
 
         <Tab.Screen 
         name="Gym" 
-        component={AddFighter} 
+        component={CreateAccount} 
         color = 'white'
         options={{ 
           tabBarIcon: () => (

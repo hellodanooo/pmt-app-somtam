@@ -1,11 +1,13 @@
-import { View, Text, StatusBar } from 'react-native';
+import { View, Text, StatusBar, StyleSheet } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import NavBar from '../navBar/NavBar';
 import AddFighter from '../../screens/AddFighter';
-import Event from '../../screens/Event';
+import EventDetails from '../../screens/EventDetails';
 import Profile from '../../screens/Profile';
+import CreateAccount from '../../screens/CreateAccount';
+import EventList from '../../screens/EventList';
 
 
 
@@ -15,7 +17,7 @@ const AppNavigation = () => {
   const Stack = createStackNavigator();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer style={StyleSheet.container}>
       <StatusBar barStyle="light-content" translucent={true} backgroundColor="transparent" />
       <Stack.Navigator
       screenOptions={{
@@ -27,8 +29,16 @@ const AppNavigation = () => {
         component={NavBar}
         />
         <Stack.Screen
-        name = "Event"
-        component={Event}
+        name = "EventList"
+        component={EventList}
+        />
+        <Stack.Screen
+        name = "EventDetails"
+        component={EventDetails}
+        />
+        <Stack.Screen
+        name = "CreateAccount"
+        component={CreateAccount}
         />
         <Stack.Screen
         name = "Profile"
@@ -38,10 +48,19 @@ const AppNavigation = () => {
         name = "AddFighter"
         component={AddFighter}
         />
+        
 
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    justifyContent:'center',
+    alignItems:'center',
+  }
+})
 
 export default AppNavigation

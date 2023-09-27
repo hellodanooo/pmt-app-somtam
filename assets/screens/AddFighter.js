@@ -100,11 +100,6 @@ const AddFighter = ({navigation}) => {
             onPress={create}
             />
           </View>
-
-          
-
-          
-          
           <StatusBar style="auto" />
         
       </ScrollView>
@@ -117,7 +112,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor :BACKGROUND_COLOR,
-    paddingBottom: 30,
   },
 
   input: {

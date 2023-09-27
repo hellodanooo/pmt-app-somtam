@@ -13,10 +13,8 @@ const Profile = () => {
   const [gender, setGender]=useState();
   const [gym, setGym]=useState();
   const [weight, setWeight]=useState();
-  const fighterID = "TEST5";
+  const fighterID = "00gAsU4OZgB1LOt9t9UV";
 
-    
-      
   useEffect(() => {
     const fetchData = async () => {
       const docRef = doc(db, "Fighters", fighterID);
@@ -30,11 +28,9 @@ const Profile = () => {
         console.log("No such document!");
       }
     };
-  fetchData();
-    }, []);
-
-    console.log("profileData", profileData);
-
+    fetchData();
+    }, []
+  );
     
 
   return (
@@ -43,7 +39,7 @@ const Profile = () => {
       <>
         <ProfileInfo
           icon={'information'}
-          listInfo={[profileData.first_name, profileData.last_name, profileData.dob, profileData.gender]}
+          listInfo={[profileData.first, profileData.last, profileData.dob, profileData.gender]}
         />
         <ProfileInfo
           icon={'dumbbell'}
@@ -51,11 +47,11 @@ const Profile = () => {
         />
         <ProfileInfo
           icon={'scale'}
-          listInfo={[profileData.weight]}
+          listInfo={[profileData.weight_class]}
         />
         <ProfileInfo
           icon={'karate'}
-          listInfo={[profileData.fight]}
+          listInfo={[profileData.win]}
         />
         <ProfileInfo
           icon={'chart-box'}
