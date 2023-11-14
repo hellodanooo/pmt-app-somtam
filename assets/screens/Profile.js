@@ -13,11 +13,11 @@ const Profile = () => {
   const [gender, setGender]=useState();
   const [gym, setGym]=useState();
   const [weight, setWeight]=useState();
-  const fighterID = "00gAsU4OZgB1LOt9t9UV";
+  const pmt_id = "AADYAVERMA1172006";
 
   useEffect(() => {
     const fetchData = async () => {
-      const docRef = doc(db, "Fighters", fighterID);
+      const docRef = doc(db, "profiles", pmt_id);
       const docSnap = await getDoc(docRef); // Use await to wait for the result
 
       if (docSnap.exists()) {
@@ -47,7 +47,7 @@ const Profile = () => {
         />
         <ProfileInfo
           icon={'scale'}
-          listInfo={[profileData.weight_class]}
+          listInfo={[profileData.weightclass]}
         />
         <ProfileInfo
           icon={'karate'}

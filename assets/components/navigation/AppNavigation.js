@@ -8,6 +8,7 @@ import EventDetails from '../../screens/EventDetails';
 import Profile from '../../screens/Profile';
 import CreateAccount from '../../screens/CreateAccount';
 import EventList from '../../screens/EventList';
+import ListFighters from '../../screens/ListFighters';
 
 
 
@@ -47,6 +48,10 @@ const AppNavigation = () => {
         <Stack.Screen
         name = "AddFighter"
         component={AddFighter}
+        />
+        <Stack.Screen
+        name = "ListFighters"
+        component={ListFighters}
         />
         
 

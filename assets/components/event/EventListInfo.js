@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, SafeAreaView, Image, Dimensions } from 'react-n
 import React from 'react';
 import { BACKGROUND_CARD_COLOR, TEXT_MAIN_COLOR } from '../../graphics/Colors';
 import CustomButton from '../customButton/CustomButton';
+import PicEvent from '../../image/eventImg.jpg';
 
 const EventListInfo = ({title, location, date, event_image, navigation, eventId}) => {
 
@@ -14,7 +15,7 @@ const EventListInfo = ({title, location, date, event_image, navigation, eventId}
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          source={{uri:event_image}}
+          source={PicEvent}
           resizeMode="cover"
         />
       </View>

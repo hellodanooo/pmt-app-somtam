@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import EventInfo from '../components/event/EventInfo';
 import { doc, getDoc } from "firebase/firestore";
 import { db} from '../database/config';
+import PicEvent from '../image/eventImg.jpg';
 
 const EventDetails = ({route, navigation}) => {
 
@@ -22,7 +23,7 @@ const EventDetails = ({route, navigation}) => {
 
       if (docSnap.exists()) {
         const data = docSnap.data();
-        const dateString = data.date.toDate().toLocaleString();
+        const dateString = data['Competition Date'].toDate().toLocaleString();
         data.date = dateString;
         setEventData(data); 
       } else {
@@ -42,7 +43,7 @@ const EventDetails = ({route, navigation}) => {
           <View style={styles.imageContainer}>
           <Image
             style={styles.image}
-            source={{uri:eventData.flyer}}
+            source={PicEvent}
           />
           </View>
           <View style={styles.eventInfoContainer}>
@@ -52,7 +53,7 @@ const EventDetails = ({route, navigation}) => {
             />
             <EventInfo
             icon={'clock-outline'}
-            listInfo={[eventData.weighin_time]}
+            listInfo={[eventData['Bouts Start']]}
             />
             <EventInfo
             icon={'map-marker'}
@@ -62,14 +63,16 @@ const EventDetails = ({route, navigation}) => {
           
           <CustomButton
           text="Register to the event"
-          onPress={() => navigation.navigate('AddFighter')}
+          onPress={() => navigation.navigate('ListFighters')}
           />
         
       </SafeAreaView>
 
       </>
     ) : (
-      <Text>Loading...</Text>
+      <SafeAreaView style={styles.container}>
+        <Text>Loading...</Text>
+      </SafeAreaView>
     )}
     </ScrollView>
     

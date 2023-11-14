@@ -11,29 +11,14 @@ import { getFirestore, setDoc, doc } from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
-const auth = getAuth();
+
 
 const CreateAccount = ({navigation}) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signUp = ()=>{
-    createUserWithEmailAndPassword(auth, email, password)
-    .then(async () => {
-        try {
-            await setDoc(doc(db, "Fighters", auth.currentUser.uid), { email: email});
-            console.log('correctly signed up and logged in');
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
-
-    })
-    .catch((error) => {
-      /* this.state = {email: '', name: '', password: ''}; */
-      console.log(error)
-    });
-  }
+  
   
   return (
     <KeyboardAvoidingView style={styles.container}>
