@@ -12,25 +12,27 @@ const EventDetails = ({route, navigation}) => {
 
   const [eventData, setEventData] = useState(null);
 
-  const eventId = "4N7ZUGKcxZuh6UiJ8XAX";
+  const eventId = "Bakersfield_11_12_2023";
 
   const { id } = route.params;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const docRef = doc(db, "events", id);
-      const docSnap = await getDoc(docRef); // Use await to wait for the result
+  const fetchData = async () => {
+    const docRef = doc(db, "events", id);
+    const docSnap = await getDoc(docRef); // Use await to wait for the result
 
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        const dateString = data['Competition Date'].toDate().toLocaleString();
-        data.date = dateString;
-        setEventData(data); 
-      } else {
-        console.log("No such document!");
-      }
-    };
-    fetchData();
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      const dateString = data['Competition Date'].toDate().toLocaleString();
+      data.date = dateString;
+      setEventData(data); 
+      
+    } else {
+      console.log("No such document!");
+    }
+  };
+
+  useEffect(() => {
+    fetchData()
     }, []
   );
 
@@ -63,7 +65,7 @@ const EventDetails = ({route, navigation}) => {
           
           <CustomButton
           text="Register to the event"
-          onPress={() => navigation.navigate('ListFighters')}
+          onPress={() => navigation.navigate('ListFighters', {id: eventData.id})}
           />
         
       </SafeAreaView>

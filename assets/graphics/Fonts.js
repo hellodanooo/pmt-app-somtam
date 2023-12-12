@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { TEXT_MAIN_COLOR } from './Colors';
+import { TEXT_MAIN_COLOR, BACKGROUND_CARD_COLOR } from './Colors';
 
 const Font = StyleSheet.create({
   title: {
@@ -28,6 +28,21 @@ const Font = StyleSheet.create({
   infoText:{
     fontSize: 18,
     color: TEXT_MAIN_COLOR,
+    textAlign:'center',
+  },
+
+  infoFighter:{
+    marginHorizontal: 9,
+    marginVertical: 6,
+    fontSize: 21,
+    color: BACKGROUND_CARD_COLOR,
+  }, 
+
+  infoGym:{
+    marginHorizontal: 9,
+    marginVertical: 6,
+    fontSize:15,
+    color: BACKGROUND_CARD_COLOR,
   }
 
 
