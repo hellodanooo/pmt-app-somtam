@@ -3,11 +3,11 @@ import React from 'react'
 import Font from '../../graphics/Fonts'
 import { BUTTON_COLOR } from '../../graphics/Colors'
 
-const CustomButton = ({onPress, text}) => {
+const CustomButton = ({onPress, text, width}) => {
   return (
     <Pressable 
         onPress={onPress} 
-        style={[styles.container]}>
+        style={[styles.container, {width: width}]}>
       <Text 
         style={[Font.button]}>{text}</Text>
     </Pressable>
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 27,
     backgroundColor: BUTTON_COLOR,
+    
 
   },
 

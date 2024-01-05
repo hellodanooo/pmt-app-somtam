@@ -17,7 +17,7 @@ const ListFighters = ({route, navigation}) => {
   const [lastDoc, setLastDoc] = useState(null);
 
   const newFighter = ()=>{
-    console.log ("pressed");
+    navigation.navigate('PaymentTest');
   };
 
   const fetchDataEvent = async () => {
@@ -101,6 +101,7 @@ const ListFighters = ({route, navigation}) => {
             <CustomButton
             text="Create a new PMT Fighter"
             onPress={newFighter}/>
+            
           </View>
           
         </View>

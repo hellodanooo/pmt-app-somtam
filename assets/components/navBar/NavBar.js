@@ -7,7 +7,7 @@ import { NAV_BAR } from '../../graphics/Colors';
 import AddFighter from '../../screens/AddFighter';
 import EventList from '../../screens/EventList';
 import Profile from '../../screens/Profile';
-import CreateAccount from '../../screens/CreateAccount';
+import CreateAccount from '../../screens/authentication/CreateAccount';
 
 const NavBar = () => {
 
