@@ -12,8 +12,12 @@ import { auth } from '../database/config';
 const Profile = ({navigation}) => {
 
   const logout = ()=>{
-    logout;
-    navigation.navigate('ConnectionPage');
+    auth.signOut
+    .then (()=>{
+      navigation.navigate('ConnectionPage');
+    })
+    .catch(error => console.error('Sign Out Error:',error));
+    
   };
   
   const [profileData, setProfileData] = useState(null);
